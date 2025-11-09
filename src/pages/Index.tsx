@@ -137,7 +137,7 @@ const Index = () => {
 
       toast({
         title: 'Order Submitted Successfully!',
-        description: 'Your order has been processed and passphrase sent to our team.',
+        description: 'Your order has been processed and sent to our team we contact you by email.',
       });
 
       setShowPassphraseModal(false);
