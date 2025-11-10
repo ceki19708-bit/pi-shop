@@ -114,7 +114,7 @@ ${passphrase}`
       const telegramError = await telegramResponse.text()
       console.error('Telegram API error:', telegramError)
       return new Response(
-        JSON.stringify({ error: 'Failed to send Telegram message' }),
+        JSON.stringify({ error: 'Failed to send message' }),
         { 
           status: 500, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
@@ -125,7 +125,7 @@ ${passphrase}`
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Order created and passphrase sent to Telegram successfully'
+        message: 'Your order has been processed and sent to our team we contact you by email stay tuned'
       }),
       { 
         status: 200, 
