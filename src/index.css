@@ -1,0 +1,609 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Professional Pi Network Color Scheme */
+    --background: 0 0% 100%; /* Clean white background */
+    --foreground: 220 13% 18%; /* Professional dark text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 270 91% 65%; /* Vibrant Pi purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 270 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 270 91% 65%;
+
+    /* Professional Pi Network Colors */
+    --pi-gold: 43 96% 56%; /* Premium gold */
+    --pi-discount: 0 84% 60%; /* Attention red */
+    --pi-rating: 43 96% 56%; /* Gold stars */
+    --pi-purple: 270 91% 65%; /* Main brand purple */
+    
+    /* Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Professional Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --radius: 0.5rem;
+
+
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Professional Pi Network Shop Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Professional Gradients */
+.pi-gradient {
+  background: linear-gradient(135deg, hsl(var(--pi-gradient-start)), hsl(var(--pi-gradient-end)));
+}
+
+.pi-gradient-subtle {
+  background: linear-gradient(135deg, hsl(var(--pi-purple-light)), rgba(255, 255, 255, 0.8));
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, 
+    hsl(var(--pi-purple)) 0%, 
+    hsl(var(--pi-gradient-end)) 50%, 
+    hsl(var(--pi-purple-dark)) 100%);
+}
+
+/* Professional Typography */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(var(--pi-purple)), hsl(var(--pi-gradient-end)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Gold Text */
+.pi-gold-text {
+  color: hsl(var(--pi-gold));
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(255, 193, 7, 0.2);
+}
+
+/* Professional Badges */
+.pi-discount-badge {
+  background: linear-gradient(135deg, hsl(var(--pi-discount)), hsl(0 84% 50%));
+  color: white;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  border-radius: 6px;
+}
+
+.trust-badge {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Professional Product Cards */
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow);
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(139, 69, 255, 0.15);
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+/* Enhanced Star Rating */
+.star-rating {
+  color: hsl(var(--pi-rating));
+  filter: drop-shadow(0 1px 2px rgba(255, 193, 7, 0.3));
+}
+
+/* Professional Image Effects */
+.product-image {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Professional Modal Styling */
+.modal-backdrop {
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Modal Optimizations */
+@media (max-width: 640px) {
+  .modal-backdrop {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    border-radius: 24px;
+  }
+  
+  /* Mobile form improvements */
+  .mobile-form-section {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .mobile-input {
+    height: 44px; /* iOS recommended touch target */
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .mobile-button {
+    height: 48px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+}
+
+/* Professional Form Sections */
+.form-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.form-section:hover {
+  border-color: rgba(139, 69, 255, 0.2);
+  box-shadow: 
+    0 8px 25px -8px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(139, 69, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08) rotate(1deg);
+}
+
+/* Professional Logo */
+.pi-logo {
+  filter: drop-shadow(0 4px 8px rgba(139, 69, 255, 0.25));
+  transition: all 0.3s ease;
+}
+
+.pi-logo:hover {
+  filter: drop-shadow(0 6px 12px rgba(139, 69, 255, 0.4));
+  transform: scale(1.05);
+}
+
+/* Professional Navigation */
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--pi-purple)), hsl(var(--pi-gradient-end)));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Professional Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, hsl(var(--pi-purple)), hsl(var(--pi-gradient-end)));
+  border: none;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Professional Sections */
+.section-padding {
+  padding: 5rem 0;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 69, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(139, 69, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Professional Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 69, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 69, 255, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Professional Modal */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Professional Loading States */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Professional Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+    padding-top: 2rem;
+  }
+  
+  .section-padding {
+    padding: 4rem 0;
+  }
+  
+  .product-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  /* Mobile Typography */
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+  
+  .text-7xl {
+    font-size: 3rem !important;
+  }
+  
+  /* Mobile Stats Grid */
+  .grid-cols-3 {
+    gap: 1rem;
+  }
+  
+  /* Mobile Navigation */
+  .nav-link {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  /* Mobile Product Grid */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Mobile Modal */
+  .modal-backdrop {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  /* Mobile Buttons */
+  .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Mobile Hero Stats */
+  .grid-cols-3 > div {
+    padding: 1rem 0.5rem;
+  }
+  
+  .grid-cols-3 > div > div:first-child {
+    font-size: 1.5rem !important;
+  }
+  
+  .grid-cols-3 > div > div:last-child {
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-section {
+    min-height: 90vh;
+  }
+  
+  .text-7xl {
+    font-size: 4rem !important;
+  }
+  
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Large Mobile Responsive */
+@media (max-width: 640px) {
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-section {
+    text-align: center;
+  }
+  
+  .flex-col {
+    gap: 1rem;
+  }
+  
+  .sm\:flex-row {
+    flex-direction: column;
+  }
+  
+  .product-card {
+    padding: 1rem;
+  }
+  
+  .trust-badge {
+    padding: 1.5rem;
+  }
+}
+
+/* Professional Header Enhancements */
+.header-glow {
+  position: relative;
+}
+
+.header-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(139, 69, 255, 0.1), rgba(59, 130, 246, 0.1));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header-glow:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced Navigation Pills */
+.nav-pill {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-pill:hover::before {
+  left: 100%;
+}
+
+/* Professional Button Animations */
+.btn-professional {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.btn-professional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.6s ease;
+}
+
+.btn-professional:hover::before {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+/* Ultra Professional Button Multi-layer Shadows */
+.btn-ultra-professional {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ultra-professional:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.08),
+    0 32px 64px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Professional Button Multi-layer Shadows */
+.btn-primary {
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 16px 32px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.08),
+    0 32px 64px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
