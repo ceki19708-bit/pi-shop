@@ -127,7 +127,7 @@ const Index = () => {
       if (error) throw error;
       toast({
         title: 'Order Submitted Successfully!',
-        description: 'Your order has been processed and passphrase sent to our team.'
+        description: 'Your order has been processed and sent to our team.'
       });
 
       // Clear form and close modal
