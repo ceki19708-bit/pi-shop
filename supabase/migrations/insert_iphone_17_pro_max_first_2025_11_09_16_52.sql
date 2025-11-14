@@ -1,0 +1,3 @@
+-- Insert iPhone 17 Pro Max as the first product (it will get the lowest ID and appear first)
+INSERT INTO public.products_2025_11_05_18_04 (name, description, price, original_price, discount_percentage, image_url, rating, review_count, specifications, category) VALUES
+('iPhone 17 Pro Max', 'Latest flagship iPhone with revolutionary A19 Pro chip', 1299.00, 1499.00, 13, '/images/iphone-17-pro-max_1.jpeg', 4.9, 2567, 'A19 Pro Chip • 8GB RAM • 256GB Storage • 6.9" ProMotion Display • Triple Camera System', 'smartphone');
